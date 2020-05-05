@@ -16,7 +16,6 @@ class JobsController < ApplicationController
             location: params[:location],
             snippet: params[:snippet],
             salary: params[:salary],
-            type: params[:type],
             link: params[:link],
             company: params[:company],
             api_id: params[:api_id]

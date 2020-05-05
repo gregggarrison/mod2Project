@@ -26,7 +26,6 @@ ActiveRecord::Schema.define(version: 2020_05_04_240553) do
     t.string "location"
     t.text "snippet"
     t.string "salary"
-    t.string "type"
     t.string "link"
     t.string "company"
     t.string "api_id"
