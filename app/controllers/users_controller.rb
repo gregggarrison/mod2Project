@@ -3,8 +3,6 @@ class UsersController < ApplicationController
     def index 
         @users = User.all 
         render json: @users, include: :favorites
-
-
     end
 
     def show
@@ -21,7 +19,6 @@ class UsersController < ApplicationController
             last_name: params[:last_name],
             phone: params[:phone]
         )
-
         redirect_to "http://localhost:3001"
     end
 
