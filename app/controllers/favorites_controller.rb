@@ -13,11 +13,11 @@ class FavoritesController < ApplicationController
     end
 
     def create
-        Favorite.create(
-            title: params[:title]
-
-        )
-
+        Favorite.create({
+            user_id: params[:user_id],
+            job_id: params[:job_id]
+        })
+        redirect_to "http://localhost:3001"
 
     end
 
