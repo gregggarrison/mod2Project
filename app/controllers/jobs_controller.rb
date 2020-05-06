@@ -1,26 +1,18 @@
 class JobsController < ApplicationController
 
     def index
-        @jobs = Job.all
-        render json: @jobs
+    @jobs =  RestClient.get ("https://jobs.github.com/positions.json?&page=1")
+    render json: @jobs
+    
+        # binding.pry
     end
 
     def show
-        @job = Job.find(params[:id])
+    # @job= RestClient.get ("https://jobs.github.com/positions.json?&page=1&id=?")
+    # render json: @job 
+        @job = Job.findparams[:id]
         render json: @job
     end
 
-    def create
-        Job.create({
-            title: params[:title],
-            location: params[:location],
-            snippet: params[:snippet],
-            salary: params[:salary],
-            link: params[:link],
-            company: params[:company],
-            api_id: params[:api_id]
-        })
-        redirect_to "http://localhost:3001"
-    end
 
 end
