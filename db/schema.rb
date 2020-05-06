@@ -22,13 +22,17 @@ ActiveRecord::Schema.define(version: 2020_05_04_240553) do
   end
 
   create_table "jobs", force: :cascade do |t|
-    t.string "title"
-    t.string "location"
-    t.text "snippet"
-    t.string "salary"
-    t.string "link"
-    t.string "company"
     t.string "api_id"
+    t.string "job_type"
+    t.string "url"
+    t.string "posted_at"
+    t.string "company"
+    t.string "company_url"
+    t.string "location"
+    t.string "title"
+    t.string "description"
+    t.string "how_to_apply"
+    t.string "company_logo"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
