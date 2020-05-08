@@ -13,6 +13,7 @@
 ActiveRecord::Schema.define(version: 2020_05_04_240553) do
 
   create_table "favorites", force: :cascade do |t|
+    t.string "title"
     t.integer "user_id", null: false
     t.integer "job_id", null: false
     t.datetime "created_at", precision: 6, null: false
