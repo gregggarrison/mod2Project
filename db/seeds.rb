@@ -4,7 +4,7 @@ User.destroy_all
 
 user1 = User.create(user_name: "JobSearcher", email: "noemail@noemail.com", password: "password", first_name: "Joe", last_name: "Smith", phone: 1234567890)
 
-response =  RestClient.get ("https://jobs.github.com/positions.json?&page=1")
+response =  RestClient.get ("https://jobs.github.com/positions.json?")
 jobs = JSON.parse(response)
 
 jobs.each do |job|
