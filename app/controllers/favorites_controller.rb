@@ -2,13 +2,14 @@ class FavoritesController < ApplicationController
 
     def index
         @favorites = Favorite.all 
-        render json: @favorites
+        render json: @favorites, include: [:user, :job]
+   
 
     end
 
     def show
         @favorite = Favorite.find(params[:id])
-        render json: @favorite 
+        render json: @favorite, include: [:user, :job]
 
     end
 
@@ -17,7 +18,7 @@ class FavoritesController < ApplicationController
             user_id: params[:user_id],
             job_id: params[:job_id]
         })
-        redirect_to "http://localhost:3001"
+        # redirect_to "http://localhost:3001"
 
     end
 
